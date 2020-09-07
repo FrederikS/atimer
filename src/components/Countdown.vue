@@ -33,6 +33,10 @@ export default class Countdown extends Vue {
     this.seconds = Math.floor(delta) % 60;
   }
 
+  beforeMount() {
+    this.update();
+  }
+
   created() {
     setInterval(this.update, 1000);
   }
