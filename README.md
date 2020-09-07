@@ -1,4 +1,4 @@
-# electron-vue-test
+# vue-electron-countdown
 
 ## Project setup
 ```
