@@ -1,20 +1,24 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <Countdown :end="end" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "./components/HelloWorld.vue";
+import Countdown from "./components/Countdown.vue";
 
 @Component({
   components: {
-    HelloWorld
+    Countdown
   }
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  get end(): Date {
+    return new Date(2021, 8, 1);
+  }
+}
 </script>
 
 <style>
