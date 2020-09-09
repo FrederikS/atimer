@@ -2,11 +2,23 @@
   <div class="timer">
     <progress-circle :percentage="percentage" :radius="250">
       <div class="inner">
-        <div class="days">{{ days }}</div>
+        <div class="main">
+          <span class="value">{{ days }}</span>
+          <span class="unit">tage</span>
+        </div>
         <div class="details">
-          <span>{{ hours }}</span>
-          <span>{{ minutes }}</span>
-          <span>{{ seconds }}</span>
+          <div>
+            <span class="value">{{ hours }}</span>
+            <span class="unit">std</span>
+          </div>
+          <div>
+            <span class="value">{{ minutes }}</span>
+            <span class="unit">min</span>
+          </div>
+          <div>
+            <span class="value">{{ seconds }}</span>
+            <span class="unit">sek</span>
+          </div>
         </div>
       </div>
     </progress-circle>
@@ -73,18 +85,46 @@ export default class Countdown extends Vue {
   height: 350px;
 }
 
-.days {
+.main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main .value {
   font-size: 100px;
 }
 
-.details span {
-  background-color: white;
-  padding: 20px;
-  margin: 10px;
-  color: black;
-  width: 25px;
-  display: inline-block;
+.main .unit {
+  text-transform: uppercase;
+  font-weight: bold;
   font-size: 20px;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+}
+
+.details div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.details .value {
+  color: black;
+  width: 30px;
+  background-color: white;
+  padding: 15px;
+  margin: 10px;
   border-radius: 50%;
+  font-size: 25px;
+}
+
+.details .unit {
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: lighter;
 }
 </style>
