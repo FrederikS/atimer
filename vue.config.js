@@ -2,9 +2,12 @@ module.exports = {
 	pluginOptions: {
 		electronBuilder: {
 			builderOptions: {
-        publish: ['github'],
+				publish: ['github'],
 				linux: {
-					target: ["AppImage"],
+					target: {
+						target: 'appimage',
+						arch: ['x64', 'armv7l']
+					},		
 				},
 			},
 		},
