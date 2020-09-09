@@ -1,6 +1,6 @@
 <template>
   <main id="app">
-    <Countdown :end="end" />
+    <Countdown :start="start" :end="end" />
   </main>
 </template>
 
@@ -14,6 +14,10 @@ import Countdown from "./components/Countdown.vue";
   }
 })
 export default class App extends Vue {
+  get start(): Date {
+    return new Date(2019, 7, 1);
+  }
+
   get end(): Date {
     return new Date(2021, 8, 1);
   }
@@ -25,6 +29,7 @@ html,
 body {
   height: 100%;
   display: grid;
+  background-color: #eaeaea;
 }
 
 * {

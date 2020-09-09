@@ -1,17 +1,29 @@
 <template>
   <div class="timer">
-    <span>{{ days }}</span>
-    <span>{{ hours }}</span>
-    <span>{{ minutes }}</span>
-    <span>{{ seconds }}</span>
+    <progress-circle :percentage="percentage" :radius="250">
+      <div class="inner">
+        <div class="days">{{ days }}</div>
+        <div class="details">
+          <span>{{ hours }}</span>
+          <span>{{ minutes }}</span>
+          <span>{{ seconds }}</span>
+        </div>
+      </div>
+    </progress-circle>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import ProgressCircle from "./ProgressCircle.vue";
 
-@Component
+@Component({
+  components: {
+    ProgressCircle
+  }
+})
 export default class Countdown extends Vue {
+  @Prop() private start!: Date;
   @Prop() private end!: Date;
   private days = 0;
   private hours = 0;
@@ -40,13 +52,39 @@ export default class Countdown extends Vue {
   created() {
     setInterval(this.update, 1000);
   }
+
+  format(): number {
+    return this.days;
+  }
+
+  get percentage(): number {
+    const max = Math.abs(this.start.getTime() - this.end.getTime());
+    const current = Math.abs(this.start.getTime() - new Date().getTime());
+    return (current * 100) / max;
+  }
 }
 </script>
 
 <style scoped>
-.timer span {
-  background-color: yellow;
+.inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 350px;
+}
+
+.days {
+  font-size: 100px;
+}
+
+.details span {
+  background-color: white;
   padding: 20px;
   margin: 10px;
+  color: black;
+  width: 25px;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 50%;
 }
 </style>
