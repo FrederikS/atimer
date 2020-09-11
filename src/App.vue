@@ -1,7 +1,7 @@
 <template>
   <main id="app">
     <Countdown :start="start" :end="end" />
-    <tenor-embed :id="gif.id" :dimensions="gif.dims" />
+    <tenor-embed />
   </main>
 </template>
 
@@ -23,13 +23,6 @@ export default class App extends Vue {
 
   get end(): Date {
     return new Date(2021, 8, 1);
-  }
-
-  get gif() {
-    return {
-      id: 7271887,
-      dims: [350, 360]
-    };
   }
 }
 </script>
