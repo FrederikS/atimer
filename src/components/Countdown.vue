@@ -1,6 +1,6 @@
 <template>
   <div class="timer">
-    <progress-circle :percentage="percentage" :radius="250">
+    <progress-circle :percentage="percentage" :radius="200">
       <div class="inner">
         <div class="main">
           <span class="value">{{ days }}</span>
@@ -82,7 +82,6 @@ export default class Countdown extends Vue {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 350px;
 }
 
 .main {
