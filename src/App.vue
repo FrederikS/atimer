@@ -1,19 +1,19 @@
 <template>
   <main id="app">
-    <Countdown :start="start" :end="end" />
-    <tenor-embed />
+    <countdown :start="start" :end="end" />
+    <daily-surprise />
   </main>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import Countdown from "./components/Countdown.vue";
-import TenorEmbed from "./components/TenorEmbed.vue";
+import DailySurprise from "./components/DailySurprise.vue";
 
 @Component({
   components: {
     Countdown,
-    TenorEmbed
+    DailySurprise
   }
 })
 export default class App extends Vue {
