@@ -1,5 +1,5 @@
 {
-  "name": "vue-electron-countdown",
+  "name": "atimer",
   "version": "0.3.0",
   "private": true,
   "scripts": {
