@@ -3,7 +3,7 @@
     <svg class="progress" :width="width" :height="width">
       <circle
         stroke="white"
-        :stroke-width="strokeWidth"
+        :stroke-width="strokeWidth - 2"
         :stroke-dasharray="circumference"
         fill="transparent"
         :r="normalizedRadius"
@@ -60,7 +60,7 @@ circle {
 }
 
 .progress circle:nth-child(2) {
-  stroke: #ffb6b6;
+  stroke: #5e13c7;
 }
 
 .pcircle {

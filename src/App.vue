@@ -44,7 +44,7 @@ html,
 body {
   height: 100%;
   display: grid;
-  background-color: #eaeaea;
+  background-color: #312d2c;
 }
 
 * {
@@ -56,7 +56,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #ffc9c9;
   margin: auto;
 }
 
