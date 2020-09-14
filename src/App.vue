@@ -1,7 +1,8 @@
 <template>
   <main id="app">
+    <h1>Axinja's Ausbildungs-Countdown</h1>
+    <sub>Click on day for a daily surprise!</sub>
     <countdown :start="start" :end="end" />
-    <daily-surprise />
   </main>
 </template>
 
@@ -46,7 +47,9 @@ body {
   text-align: center;
   color: #2c3e50;
   margin: auto;
-  display: flex;
-  flex-direction: column;
+}
+
+h1 {
+  margin-top: 8px;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <el-button circle @click="surprise">
-      <font-awesome-icon icon="smile" size="3x" />
+    <el-button type="text" @click="surprise">
+      <slot />
     </el-button>
     <el-dialog :width="width" :visible.sync="centerDialogVisible">
       <img :src="gif.url" />
@@ -10,8 +10,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from "vue-property-decorator";
-import { getDayOfYear } from "date-fns";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import data from "../assets/data.json";
 
 type Gif = {
@@ -25,7 +24,7 @@ export default class DailySurprise extends Vue {
   private gif: Gif = data[0];
   private centerDialogVisible = false;
   private pos = 0;
-  private day = getDayOfYear(new Date());
+  @Prop() private day!: number;
 
   surprise() {
     this.centerDialogVisible = true;
@@ -39,8 +38,6 @@ export default class DailySurprise extends Vue {
     if (localStorage.surpriseDay) {
       this.day = parseInt(localStorage.surpriseDay, 10);
     }
-
-    setInterval(this.updateDay, 60 * 1000);
   }
 
   @Watch("pos")
@@ -58,13 +55,6 @@ export default class DailySurprise extends Vue {
     if (newDay !== oldDay) {
       localStorage.surpriseDay = newDay;
       this.pos++;
-    }
-  }
-
-  private updateDay() {
-    const dayOfYear = getDayOfYear(new Date());
-    if (this.day !== dayOfYear) {
-      this.day = dayOfYear;
     }
   }
 
@@ -86,5 +76,9 @@ export default class DailySurprise extends Vue {
 
 .el-dialog {
   margin-top: 15vh;
+}
+
+.el-button--text {
+  color: inherit !important;
 }
 </style>

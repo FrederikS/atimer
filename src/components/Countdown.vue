@@ -2,10 +2,12 @@
   <div class="timer">
     <progress-circle :percentage="percentage" :radius="200">
       <div class="inner">
-        <div class="main">
-          <span class="value">{{ days }}</span>
-          <span class="unit">tage</span>
-        </div>
+        <daily-surprise :day="days">
+          <div class="main">
+            <span class="value">{{ days }}</span>
+            <span class="unit">tage</span>
+          </div>
+        </daily-surprise>
         <div class="details">
           <div>
             <span class="value">{{ hours }}</span>
@@ -28,10 +30,12 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import ProgressCircle from "./ProgressCircle.vue";
+import DailySurprise from "./DailySurprise.vue";
 
 @Component({
   components: {
-    ProgressCircle
+    ProgressCircle,
+    DailySurprise
   }
 })
 export default class Countdown extends Vue {
@@ -82,6 +86,7 @@ export default class Countdown extends Vue {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  padding: 85px;
 }
 
 .main {
