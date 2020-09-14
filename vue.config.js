@@ -9,7 +9,8 @@ module.exports = {
             arch: ["x64", "armv7l"]
           }
         }
-      }
+      },
+      nodeIntegration: true
     }
   }
 };
