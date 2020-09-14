@@ -21,7 +21,7 @@
         :cy="radius"
       />
     </svg>
-    <div class="info" :style="style">
+    <div class="info">
       <slot />
     </div>
   </div>
@@ -45,10 +45,6 @@ export default class ProgressCircle extends Vue {
 
   get offset(): number {
     return this.circumference - (this.percentage / 100) * this.circumference;
-  }
-
-  get style(): string {
-    return `padding: ${this.radius / 2}px`;
   }
 }
 </script>
