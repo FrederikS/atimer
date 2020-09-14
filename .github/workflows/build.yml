@@ -20,6 +20,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 10
+      - run: yarn electron:generate-icons
 
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1
