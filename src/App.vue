@@ -1,7 +1,7 @@
 <template>
   <main id="app">
     <h1>Axinja's Ausbildungs-Countdown</h1>
-    <sub>Click on day for a daily surprise!</sub>
+    <sub>Click on day for a daily surprise</sub>
     <countdown :start="start" :end="end" />
     <el-button
       class="close"
