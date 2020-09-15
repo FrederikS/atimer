@@ -2,7 +2,7 @@
   <div class="pcircle">
     <svg class="progress" :width="width" :height="width">
       <circle
-        stroke="white"
+        stroke="#ffc9c9"
         :stroke-width="strokeWidth - 2"
         :stroke-dasharray="circumference"
         fill="transparent"
