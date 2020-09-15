@@ -70,15 +70,24 @@ export default class DailySurprise extends Vue {
   padding: 0 !important;
 }
 
+.el-dialog__body {
+  max-height: 480px;
+  overflow-y: scroll;
+}
+
 .el-dialog__body img {
   display: block;
 }
 
 .el-dialog {
-  margin-top: 15vh;
+  margin: auto !important;
 }
 
 .el-button--text {
   color: inherit !important;
+}
+
+.el-dialog__wrapper {
+  display: grid;
 }
 </style>
