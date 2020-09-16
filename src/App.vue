@@ -71,4 +71,19 @@ h1 {
   padding: 15px !important;
   font-size: 30px !important;
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(204, 204, 204, 0.52);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
 </style>

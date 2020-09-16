@@ -71,8 +71,9 @@ export default class DailySurprise extends Vue {
 }
 
 .el-dialog__body {
-  max-height: 480px;
+  max-height: 460px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .el-dialog__body img {
