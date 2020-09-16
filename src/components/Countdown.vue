@@ -119,7 +119,7 @@ export default class Countdown extends Vue {
 .details .value {
   color: #2c3e50;
   width: 30px;
-  background-color: #ffc9c9;
+  background-color: #ca5959;
   padding: 15px;
   margin: 10px;
   border-radius: 50%;

@@ -1,7 +1,7 @@
 <template>
   <main id="app">
     <h1>Axinja's Ausbildungs-Countdown</h1>
-    <sub>Click on the remaining days counter for a daily surprise</sub>
+    <sub>Tap on the remaining days counter for a daily surprise</sub>
     <countdown :start="start" :end="end" />
     <el-button
       class="close"
@@ -56,7 +56,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #ffc9c9;
+  color: #ca5959;
   margin: auto;
 }
 

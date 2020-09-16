@@ -60,7 +60,7 @@ circle {
 }
 
 .progress circle:nth-child(2) {
-  stroke: #5e13c7;
+  stroke: #5c1d77;
 }
 
 .pcircle {
